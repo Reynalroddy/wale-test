@@ -5,6 +5,7 @@ export const logoutUser = (dispatch) => {
     removeUserFromLocalStorage();
   };
   
+  // userInfo-admin
   export const addUserToLocalStorage = ({ user, token }) => {
     localStorage.setItem("userInfo-admin", JSON.stringify(user));
     localStorage.setItem("token-admin", token);

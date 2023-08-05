@@ -5,7 +5,7 @@ import './admin.css';
 // import female from "../assets/images/woman.svg"
 // import naija from "../assets/images/naija.png"
 // import nc from "../assets/images/nc.png"
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/images/72.png'
 import { useParams,useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
