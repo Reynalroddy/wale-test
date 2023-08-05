@@ -72,9 +72,9 @@ return <div className='col-12 md:col-4' key={i}>
 <span className='text-green-500 text-xs font-bold'>view centers</span>
 </Link> */}
 
-{/* <Link to={`/birth/list?center=${it.reg_center}`}>
+<Link to={`/birth/list?center=${it.reg_center}`}>
 <span className='text-green-500 text-xs font-bold'>view registrations</span>
-</Link> */}
+</Link>
   
     </div>
 </div>
