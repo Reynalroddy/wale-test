@@ -76,11 +76,11 @@ const navigate = useNavigate();
 
     
 
-const statusBodyTemplate2 = (rowData) => {
-    return <Link  className={`btn btn-primary text-primary font-bold`} to={`/single/${rowData.Birth_Reg_ID}`} >
-VIEW 
-    </Link>
-}
+// const statusBodyTemplate2 = (rowData) => {
+//     return <Link  className={`btn btn-primary text-primary font-bold`} to={`/single/${rowData.Birth_Reg_ID}`} >
+// VIEW 
+//     </Link>
+// }
 const genderTemplate = (rowData) => {
     return <p  className={`font-bold`}>
 {getGender(rowData.gender)}
@@ -237,7 +237,7 @@ const saveAsExcelFile = (buffer, fileName) => {
                             {/* <Column field="phone" header="Birth Order"></Column> */}
                             {/* <Column field="imei" header="Device IMEI"></Column> */}
                                 
-                        <Column field="" header="Action" body={statusBodyTemplate2} />
+                        {/* <Column field="" header="Action" body={statusBodyTemplate2} /> */}
                     </DataTable>      
                     <Tooltip target=".export-buttons>button" position="bottom" />
                     <Paginator  first ={basicFirst} rows={basicRows} totalRecords={numPages} page={page}  onPageChange={onBasicPageChange}></Paginator>
