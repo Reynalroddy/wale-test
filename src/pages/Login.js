@@ -49,6 +49,8 @@ loginUser({
     password:pwd,
     device:'2e726f6002b828fefc1a93faf508a3dc'
 },dispatch)
+setEmail('');
+setPwd('')
 
 }
 
@@ -58,6 +60,8 @@ useEffect(() => {
         nav("/");
       }, 1000);
     }
+    return;
+
   }, [userInfo, nav]);
     
   return (

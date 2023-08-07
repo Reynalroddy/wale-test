@@ -1,20 +1,23 @@
 import React,{useRef} from 'react'
 import { StyleClass } from 'primereact/styleclass';
 import { Ripple } from 'primereact/ripple';
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Logo from '../assets/images/72.png'
 // import Avatar from "../assets/images/avatar.png";
 // import { InputText } from 'primereact/inputtext';
 import './home.css';
+import { useDispatch } from "react-redux";
+// import { logoutUser } from '../redux/apiCalls';
+import { logoutUser } from '../redux/functions';
 const Homez = () => {
     // const btnRef30 = useRef(null);
     // const btnRef1 = useRef(null);
     // const btnRef2 = useRef(null);
-    const nav = useNavigate();
+    // const nav = useNavigate();
     const btnRef3 = useRef(null);
     const btnRef4 = useRef(null);
     const btnRef5 = useRef(null);
-
+    const dispatch = useDispatch();
     // const btnRef7 = useRef(null);
     const btnRef8 = useRef(null);
     // const btnRef9 = useRef(null);
@@ -26,9 +29,8 @@ const Homez = () => {
 
 
     const handleLogout=()=>{
-        localStorage.removeItem("userInfo-admin"); 
-    localStorage.removeItem("token-admin");
-   nav('/login');
+        logoutUser(dispatch);
+//    nav('/login');
     }
       
     const user = JSON.parse(localStorage.getItem('userInfo-admin'));
