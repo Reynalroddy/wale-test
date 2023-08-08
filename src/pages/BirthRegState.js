@@ -93,9 +93,9 @@ states.map((it,i)=>{
     
     
 
-    {/* <Link to={`/birth/list?state=${it.State_ID}`}>
+    <Link to={`/birth/list?state=${it.State_ID}`}>
     <span className='text-green-500 text-xs font-bold'>view registrations</span>
-    </Link> */}
+    </Link>
     
         </div>
     </div>
