@@ -46,7 +46,9 @@ const navigate = useNavigate();
     BirthOrder,
     BirthPlace,
     registerations,
-    numPages
+    numPages,
+    dateFrom,
+    dateTo
   } = useSelector((state) => state.birth);
   useEffect(() => {
            getRegz(dispatch, search,
@@ -59,7 +61,9 @@ const navigate = useNavigate();
             Age, 
             BirthType,   
             BirthOrder,
-            BirthPlace
+            BirthPlace,
+            dateFrom,
+    dateTo
            )
 
 }, [dispatch,search,
@@ -72,7 +76,9 @@ const navigate = useNavigate();
     Age,
     BirthType,
     BirthOrder,
-    BirthPlace]); // eslint-disable-line react-hooks/exhaustive-deps
+    BirthPlace,
+    dateFrom,
+    dateTo]); // eslint-disable-line react-hooks/exhaustive-deps
 
     
 

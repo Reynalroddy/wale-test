@@ -340,7 +340,9 @@ export const getRegz=async(dispatch,
     Age,
     BirthType,
     BirthOrder,
-    BirthPlace
+    BirthPlace,
+    dateFrom,
+    dateTo
     )=>{
     dispatch(getRegStart());
 
@@ -355,7 +357,9 @@ export const getRegz=async(dispatch,
             Age:  Age,
             BirthType: BirthType,
             BirthOrder: BirthOrder,
-            BirthPlace: BirthPlace  
+            BirthPlace: BirthPlace  ,
+            DateFrom:dateFrom?.toString(),
+            DateTo:dateTo?.toString()
     }
     try {
       const res = await authFetch.get(`birth-registration/`,{

@@ -1,4 +1,4 @@
-import React,{useEffect} from
+import React,{useEffect,useState} from
  'react';
 import { Dropdown } from 'primereact/dropdown';
 import { InputText } from 'primereact/inputtext';
@@ -6,10 +6,12 @@ import { Button } from 'primereact/button';
 import { useDispatch,useSelector } from "react-redux";
 import { handleChange,clearFilters } from '../redux/birthSlice';
 import { getSex } from '../redux/apiCalls';
+import { Calendar } from 'primereact/calendar';
+import moment from 'moment';
 const Filter = () => {
     // const [city, setCity] = useState('');
     const dispatch = useDispatch();
-    
+    const [datez, setDates] = useState(null);
     const {
         search,
         Sex,        
@@ -30,6 +32,14 @@ const Filter = () => {
     //     {label: 'Istanbul', value: 'IST'},
     //     {label: 'Paris', value: 'PRS'}
     // ];
+
+    const handleDate=(e)=>{
+      let dates = e.target.value;       
+      setDates(dates);
+      dispatch(handleChange({ name:'dateFrom', value:moment(dates[0]).format("YYYY-MM-DD")}));
+      dispatch(handleChange({ name:'dateTo', value:moment(dates[1]).format("YYYY-MM-DD")}));
+      // dispatch(handleChange({ name:'dateTo', value:dates[1]?.getFullYear() + "-" + (("0" + dates[1]?.getMonth()+1).slice(-2)) + "-" +  dates[1]?.getDate()}))
+      }
     const clearForm = () => {
         // e.preventDefault();
         dispatch(clearFilters());
@@ -59,6 +69,11 @@ const Filter = () => {
 
 <Dropdown value={Sex} options={sexOptions} className='w-full' onChange={(e) => dispatch(handleChange({ name:'Sex', value:e.value }))} placeholder="Select Sex"/>
 
+</div>
+
+<div className='col-12 md:col-4'>
+
+<Calendar value={datez} onChange={handleDate} selectionMode="range" readOnlyInput placeholder='date range' />
 </div>
 <div className='col-12 md:col-4'>
 

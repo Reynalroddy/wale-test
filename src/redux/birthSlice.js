@@ -27,6 +27,8 @@ search: "",
     typeOptions:[],
     placeOptions:[],
     orderOptions:[],
+    dateFrom:null,
+    dateTo:null
   },
 
   reducers: {
@@ -218,6 +220,8 @@ search: "",
           BirthType: null,
           BirthOrder: null,
           BirthPlace: null,
+          dateFrom:null,
+          dateTo:null
         };
         return {
           ...state,
