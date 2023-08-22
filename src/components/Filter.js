@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from
+import React,{useEffect,useRef,useState} from
  'react';
 import { Dropdown } from 'primereact/dropdown';
 import { InputText } from 'primereact/inputtext';
@@ -8,10 +8,12 @@ import { handleChange,clearFilters } from '../redux/birthSlice';
 import { getSex } from '../redux/apiCalls';
 import { Calendar } from 'primereact/calendar';
 import moment from 'moment';
+import './home.css';
 const Filter = () => {
     // const [city, setCity] = useState('');
     const dispatch = useDispatch();
     const [datez, setDates] = useState(null);
+    const refSubmit = useRef(null);
     const {
         search,
         Sex,        
@@ -33,6 +35,14 @@ const Filter = () => {
     //     {label: 'Paris', value: 'PRS'}
     // ];
 
+
+    const handleClose=()=>{
+      refSubmit.current.hide(()=>{
+        console.log('hiddeen')
+      });
+     
+    }
+
     const handleDate=(e)=>{
       let dates = e.target.value;       
       setDates(dates);
@@ -42,8 +52,14 @@ const Filter = () => {
       }
     const clearForm = () => {
         // e.preventDefault();
+        setDates(null)
         dispatch(clearFilters());
       };
+
+
+
+
+
     useEffect(() => {
       getSex(dispatch);
     }, [dispatch])
@@ -73,7 +89,11 @@ const Filter = () => {
 
 <div className='col-12 md:col-4'>
 
-<Calendar value={datez} onChange={handleDate} selectionMode="range" readOnlyInput placeholder='date range' />
+<Calendar  ref={refSubmit} value={datez}  onChange={handleDate}   selectionMode="range" readOnlyInput  placeholder='date range' footerTemplate={(e) => (
+              <div className="footer-calendar">
+                <button onClick={handleClose}>Done</button>
+              </div>
+            )} />
 </div>
 <div className='col-12 md:col-4'>
 
