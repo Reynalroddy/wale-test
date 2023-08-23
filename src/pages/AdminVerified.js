@@ -219,6 +219,7 @@ const saveAsExcelFile = (buffer, fileName) => {
         </div>
        
     </div>
+    <span className="text-md font-medium text-900">Registration List Count:{registerations.length}</span> 
              <DataTable value={registerations} 
              ref={dt}
                     loading={isLoading}
