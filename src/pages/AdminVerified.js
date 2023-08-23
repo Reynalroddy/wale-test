@@ -219,7 +219,7 @@ const saveAsExcelFile = (buffer, fileName) => {
         </div>
        
     </div>
-    <span className="text-md font-medium text-900">Registration List Count:{registerations.length}</span> 
+    <span className="text-md font-medium text-900">Registration List Count:{numPages.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 
              <DataTable value={registerations} 
              ref={dt}
                     loading={isLoading}

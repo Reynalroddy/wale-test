@@ -252,4 +252,4 @@ search: "",
 
 export const { getZonesFailure,getZonesStart,getZonesSuccess,getStateFailure,getStateStart,getStateSuccess,getRegFailure,getRegStart,getRegSuccess,changePage,handleChange,getLgaFailure,getLgaStart,getLgaSuccess,getCenterFailure,getCenterStart,getCenterSuccess,getOptionFailure,getOptionStart,getSexOptionSuccess,getTypeOptionSuccess,getOrderOptionSuccess,getPlaceOptionSuccess,clearFilters,getSingleRegFailure,getSingleRegStart,getSingleRegSuccess } = birthSlice.actions;
 
-export default birthSlice.reducer;
+export default birthSlice.reducer;          
